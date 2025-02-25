@@ -24,4 +24,9 @@ public class AppoitmentController {
     public List<Appoitment> getAllPoitment(){
         return appoitmentService.getAllPoitment();
     }
+
+    @GetMapping("/getAppoitmentByDocter/{username}")
+    public List<Appoitment> getAppoitmentByDocter(@PathVariable String username){
+        return appoitmentService.getAppoitmentByDocter(username);
+    }
 }
