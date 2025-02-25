@@ -5,6 +5,8 @@ import com.onkar.HospitalManagment.repo.AppoitmentRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class AppoitmentService {
 
@@ -13,5 +15,9 @@ public class AppoitmentService {
 
     public void addAppoitment(Appoitment appoitment) {
         appoitmentRepo.save(appoitment);
+    }
+
+    public List<Appoitment> getAllPoitment() {
+        return appoitmentRepo.findAll();
     }
 }

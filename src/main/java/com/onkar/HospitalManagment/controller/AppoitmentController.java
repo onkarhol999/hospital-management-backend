@@ -3,10 +3,9 @@ package com.onkar.HospitalManagment.controller;
 import com.onkar.HospitalManagment.model.Appoitment;
 import com.onkar.HospitalManagment.service.AppoitmentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @CrossOrigin
@@ -19,5 +18,10 @@ public class AppoitmentController {
     public String addAppoitment(@RequestBody Appoitment appoitment){
         appoitmentService.addAppoitment(appoitment);
         return "Added..";
+    }
+
+    @GetMapping("/getAllAppoitment")
+    public List<Appoitment> getAllPoitment(){
+        return appoitmentService.getAllPoitment();
     }
 }
