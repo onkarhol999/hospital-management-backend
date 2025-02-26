@@ -29,4 +29,10 @@ public class AppoitmentController {
     public List<Appoitment> getAppoitmentByDocter(@PathVariable String username){
         return appoitmentService.getAppoitmentByDocter(username);
     }
+
+    @DeleteMapping("/deleteAppoitmentById/{id}")
+    public String deleteAppoitmentById(@PathVariable Integer id){
+         appoitmentService.deleteAppoitmentById(id);
+         return "Deleted..";
+    }
 }

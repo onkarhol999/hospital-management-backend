@@ -32,4 +32,8 @@ public class AppoitmentService {
         }
         return Apbd;
     }
+
+    public void deleteAppoitmentById(Integer id) {
+        appoitmentRepo.deleteById(id);
+    }
 }
